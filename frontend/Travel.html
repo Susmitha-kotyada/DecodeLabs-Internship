@@ -1,0 +1,438 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Explore India</title>
+		<link rel="stylesheet" href="Travel.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<nav class="top-nav">
+			<marquee scrollamount="30" direction="right"><b>🎉 Explore Bharat - Where Every Journey Tells a Story 💫</b></marquee>
+			<div class="logo"><img src="images\logo.jpeg" alt="logo" /></div>
+		</nav>
+
+		<nav class="nav-bar">
+			<h1>✈️ ExploreBharat </h1>
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#category">Categories</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+
+
+		<section class="hero-section" id="home">
+			<div class="hero">
+				<div class="hero-left">
+					<h1 class="fade">Fly Like a Bird...</h1>
+					<h2 class="fade">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Explore the Soul of India</h2>
+					<p>&nbsp;&nbsp;Experience the divine beauty of India's Sacred Temples.Discover India's Sacred Temples, Heritage & Timeless Traditions</p>
+					<button><a href="#category">Explore Now</a></button>
+				</div>
+				<div class="hero-right">
+					<img src="images\explorebharat.jpeg" alt="image" />
+				</div>
+			</div>
+		</section>
+		
+		<section class="categories" id="category">
+			<h1 class="section-title fade">Explore Categories</h1>
+			<div class="category">
+			<a href="#spiritual">
+				<div class="category-card" onclick="showSpiritual()">
+					<img src="images\spiritualindia.jpeg" alt="temples"/>
+					<h3>Spiritual India</h3>
+				</div>
+			</a>
+			<a href="#heritage">
+				<div class="category-card" onclick="showHeritage()">
+					<img src="images\heritage.jpeg" alt="heritage"/>
+					<h3>Heritage</h3>
+				</div>
+			</a>
+				<div class="category-card" onclick="showHillStation()">
+					<img src="images\hillstations.jpeg" alt="hillstation"/>
+					<h3>HillStations</h3>
+				</div>
+				<div class="category-card" onclick="showNature()">
+					<img src="images\nature.jpeg" alt="nature"/>
+					<h3>Nature</h3>
+				</div>
+				<div class="category-card" onclick="showBeach()">
+					<img src="images\beaches.jpeg" alt="beaches"/>
+					<h3>Beaches</h3>
+				</div>
+				<div class="category-card" onclick="showCity()">
+					<img src="images\cities.jpeg" alt="cities"/>
+					<h3>Cities</h3>
+				</div>
+			</div>
+		</section>
+<!-- Spiritual section----------------------------------------------------------------------------->
+		<section id="spiritual">
+    			<h1>...Welcome to Spiritual India...</h1>   		
+    		<div class="spiritual-row">
+    			<div class="spiritual-card" onclick="showTirumala()">
+    				<img src="images\tirumalaa.jpeg" alt="tirumala"/>
+    				<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tirumala</h3>
+    			</div>
+    			<div class="spiritual-card"
+    			onclick="showMeenakshi()">
+    				<img src="images\meenakshi.jpeg" alt="meenakshiamman"/>
+    				<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MeenakshiAmman</h3>
+    			</div>
+    			<div class="spiritual-card" onclick="showKashi()">
+    				<img src="images\kashii.jpeg" alt="kashi"/>
+    				<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kashi Viswanath</h3>
+    			</div>
+    		</div>
+    		<div class="spiritual-row">
+    			<div class="spiritual-card" onclick="showKedar()">
+    				<img src="images\kedar.jpeg" alt="kedarnath"/>
+    				<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kedarnath</h3>
+    			</div>
+    			<div class="spiritual-card" onclick="showPuri()">
+    				<img src="images\purii.jpeg" alt="puri"/>
+    				<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JaganathSwamy</h3>
+    			</div>
+    		</div>
+    		<button class="back" onclick="backtoCategories()">Back to Categories</button>
+		</section>
+		
+<!-- Tirumala section------------------------------------------------------------------------->
+		<section id="tirumala" class="temples">
+    		<h1>Tirumala Venkateswara Temple</h1>
+		    <img src="images\tirumala.jpeg" alt="Tirumala Temple">
+    		<h2>About</h2>
+    		<p>
+        	📍 Location: Tirupati, Andhra Pradesh<br>
+        	Tirumala Venkateswara Temple is one of the world's most visited
+        	Hindu temples. Dedicated to Lord Venkateswara,it attracts millions of devotees every year. Its peaceful surroundings and magnificent architecture make it a must-visit destination for travelers and pilgrims alike.
+    		</p>
+    		<button onclick="backToSpiritual()">
+    		← Back to Spiritual India
+			</button>
+		</section>
+<!----------Meenakshi Amman section------------------------------------------------------------->
+		<section id="meenakshi" class="temples">
+    		<h1>Meenakshi Amman Temple</h1>
+		    <img src="images\meenakshiamman.jpeg" alt="meenakshiamman Temple">
+    		<h2>About</h2>
+    		<p>
+    		📍 Location: Madurai, Tamil Nadu<br>
+				Famous for its colorful towers and intricate sculptures, this temple is dedicated to Goddess Meenakshi. It is one of the finest examples of Dravidian architecture. The temple beautifully showcases South India's rich culture, history, and artistic heritage.
+    		</p>
+    		<button onclick="backToSpiritual()">
+    		← Back to Spiritual India
+			</button>
+		</section>
+<!--       PUri section-------------------------------------------------------------------->
+		<section id="puri" class="temples">
+    		<h1>Puri JaganathSwamy Temple</h1>
+		    <img src="images\puri.jpeg" alt="puri">
+    		<h2>About</h2>
+    		<p>
+    		📍 Location: Puri, Odisha<br>
+				Known worldwide for the grand Rath Yatra festival, this temple is dedicated to Lord Jagannath. Its magnificent architecture and religious importance attract visitors from across the globe. It is one of India's most sacred pilgrimage destinations.
+    		</p>
+    		<button onclick="backToSpiritual()">
+    		← Back to Spiritual India
+			</button>
+		</section>
+<!---------Kashi section----------------------------------------------------------->
+		<section id="kashi" class="temples">
+    		<h1>Kashi Viswanath Temple</h1>
+		    <img src="images\kashi.jpeg" alt="kashi">
+    		<h2>About</h2>
+    		<p>
+    		📍 Location: Varanasi, Uttar Pradesh<br>
+				One of the holiest temples dedicated to Lord Shiva, Kashi Vishwanath is located in the sacred city of Varanasi. It is one of the twelve Jyotirlingas and is visited by millions of devotees. The nearby Ganga River adds to its spiritual significance.
+    		</p>
+    		<button onclick="backToSpiritual()">
+    		← Back to Spiritual India
+			</button>
+		</section>
+<!---Kedarnath section----------------------------------------------------------------------->
+		<section id="kedar" class="temples">
+    		<h1>Kedarnath Temple</h1>
+		    <img src="images\kedarnath.jpeg" alt="kedarnath Temple">
+    		<h2>About</h2>
+    		<p>
+    		📍 Location: Rudraprayag District, Uttarakhand<br>
+				Surrounded by the majestic Himalayan mountains, Kedarnath Temple is one of the holiest shrines of Lord Shiva. It is part of the Char Dham pilgrimage and offers breathtaking natural beauty. The journey to the temple is as memorable as the destination itself.
+    		</p>
+    		<button onclick="backToSpiritual()">
+    		← Back to Spiritual India
+			</button>
+		</section>
+<!-- Heritage section---------------------------------------------------------------------->
+
+		<section id="heritage">
+    			<h1>...Welcome to Heritage of India...</h1>   		
+    		<div class="heritage-row" id="heritage-container">
+    			<div class="heritage-card" onclick="showTaj()">
+    				<img src="images\tajj.jpeg" alt="taj"/>
+    				<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Taj Mahal</h3>
+    			</div>
+    			<div class="heritage-card" onclick="showHampi()">
+    				<img src="images\hampii.jpeg" alt="hampi"/>
+    				<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hampi</h3>
+    			</div>
+    			<div class="heritage-card" onclick="showKonark()">
+    				<img src="images\konark.jpeg" alt="konark"/>
+    				<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Konark Sun Temple</h3>
+    			</div>
+    		</div>
+    		<div class="heritage-row">
+    			<div class="heritage-card" onclick="showAjantha()">
+    				<img src="images\ajanthaa.jpeg" alt="ajantha"/>
+    				<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ajantha Caves</h3>
+    			</div>
+    			<div class="heritage-card" onclick="showEllora()">
+    				<img src="images\elloraa.jpeg" alt="ellora"/>
+    				<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ellora Caves</h3>
+    			</div>
+    		</div>
+    		<button class="back" onclick="backtoCategories()">Back to Categories</button>
+		</section>
+
+<!-- Taj Mahal section--------------------------------------------------------------------->
+		<section id="taj" class="ancients">
+    		<h1>Taj Mahal<br>One of the Seven Wonders of the World</h1>
+		    <img src="images\taj.jpeg" alt="Taj">
+    		<h2>About</h2>
+    		<p>
+        	📍 Location: Agra, Uttar Pradesh<br>
+			Description:<br>
+			The Taj Mahal is a magnificent white marble mausoleum built by Emperor Shah Jahan in memory of his wife Mumtaz Mahal. It is a UNESCO World Heritage Site and one of the New Seven Wonders of the World.
+    		</p>
+    		<button onclick="backToHeritage()">
+    		← Back to Heritage of India
+			</button>
+		</section>
+<!-----------Hampi section------------------------------------------------------------->
+		<section id="hampi" class="ancients">
+    		<h1>HAMPI</h1>
+		    <img src="images\hampii.jpeg" alt="hampi">
+    		<h2>About</h2>
+    		<p>
+    		📍 Location: Vijayanagara District, Karnataka<br>
+			Description:<br>
+			Hampi was the capital of the Vijayanagara Empire and is famous for its ancient temples, stone chariots, and impressive ruins. It is a UNESCO World Heritage Site that showcases India's rich architectural heritage.
+    		</p>
+    		<button onclick="backToHeritage()">
+    		← Back to Heritage India
+			</button>
+		</section>
+<!-- konark sun section-------------------------------------------------------------------->
+		<section id="konark" class="ancients">
+    		<h1>Konark Sun Temple</h1>
+		    <img src="images\konarksun.jpeg" alt="konark">
+    		<h2>About</h2>
+    		<p>
+    		📍 Location: Konark, Odisha<br>
+			Description:<br>
+			Built in the 13th century, the Konark Sun Temple is designed as a giant stone chariot dedicated to the Sun God. Its intricate carvings and remarkable architecture attract visitors from around the world.
+    		</p>
+    		<button onclick="backToHeritage()">
+    		← Back to Heritage of India
+			</button>
+		</section>
+<!---------Ajantha section----------------------------------------------------------->
+		<section id="ajantha" class="ancients">
+    		<h1>Ajantha Caves</h1>
+		    <img src="images\ajanthaa.jpeg" alt="ajantha">
+    		<h2>About</h2>
+    		<p>
+    		📍 Location: Aurangabad District, Maharashtra<br>
+			Description:<br>
+			The Ajanta Caves are a group of ancient Buddhist rock-cut caves known for their beautiful murals and sculptures. They provide a glimpse into India's rich artistic and spiritual history.
+    		</p>
+    		<button onclick="backToHeritage()">
+    		← Back to Heritage of India
+			</button>
+		</section>
+<!---Ellora Caves section----------------------------------------------------------------------->
+		<section id="ellora" class="ancients">
+    		<h1>Ellora Caves</h1>
+		    <img src="images\elloraa.jpeg" alt="Ellora">
+    		<h2>About</h2>
+    		<p>
+    		📍 Location: Aurangabad District, Maharashtra<br>
+			Description:<br>
+			The Ellora Caves feature magnificent rock-cut temples representing Hinduism, Buddhism, and Jainism. The famous Kailasa Temple, carved from a single rock, is considered an engineering and architectural masterpiece.
+    		</p>
+    		<button onclick="backToHeritage()">
+    		← Back to Heritage of India
+			</button>
+
+		</section>
+<!--    About SEction----------------------------------------------------------------------------->
+		<section id="about">
+    		<h1>About Explore Bharat</h1>
+    		<div class="about-container">
+        		<div class="about-image">
+            		<img src="images\india-map.jpeg" alt="Explore Bharat">
+        		</div>
+        		<div class="about-content">
+            		<h2>Discover the Soul of India</h2>
+            		<p>
+                		Explore Bharat is your gateway to India's incredible beauty,
+                		rich heritage, spiritual destinations, breathtaking landscapes,
+                		and vibrant culture.
+                		Whether you're planning a pilgrimage, an adventure trip,
+                		or a family vacation, Explore Bharat helps you discover
+                		the best places across the country.
+            		</p>
+            		<p>
+            			Explore Bharat not only showcases India's spiritual, historical, and natural attractions but also helps travelers discover useful information to plan memorable journeys across the country.
+            		</p>
+            		<a href="#category"><button>Start Exploring</button></a>
+		        </div>
+		    </div>
+		</section>
+<!-------- why choose explore bharat----------------------------------------------------------->
+		<section id="why">
+    		<h1>Why Choose Explore Bharat?</h1>
+		    <p class="why-heading">Experience India's timeless beauty, rich culture, and unforgettable journeys.
+    		</p>
+    		<div class="why-container">
+		        <div class="why-card">
+        		    <div class="why-icon"><i class="fa-solid fa-landmark"></i></div>
+            			<h2>Rich Heritage</h2>
+			            <p>Discover magnificent monuments, UNESCO World Heritage Sites,
+                			and centuries of Indian history.
+            			</p>
+        			</div>
+        		</div>
+			    <div class="why-card">
+           			<div class="why-icon"><i class="fa-solid fa-earth-asia"></i></div>
+			            <h2>Diverse Destinations</h2>
+			            <p>
+            			    From snowy mountains to golden beaches,
+                			India offers something for every traveler.
+           				 </p>
+   			        </div>
+   			    </div>
+		        <div class="why-card">
+        		    <div class="why-icon"><i class="fa-solid fa-camera-retro"></i></div>
+			            <h2>Picture Perfect Places</h2>
+			            <p>Explore breathtaking landscapes and capture unforgettable memories.
+            			</p>
+			        </div>
+			    </div>
+		        <div class="why-card">
+        		    <div class="why-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+			            <h2>Easy Exploration</h2>
+			            <p>Find famous destinations quickly with simple navigation and organized categories.</p>
+        			</div>
+        		</div>
+        		<div class="why-card">
+            		<div class="why-icon"><i class="fa-solid fa-users"></i></div>
+			            <h2>Made for Every Traveler</h2>
+			            <p>Whether you love spirituality,history, nature, or adventure,Explore Bharat has something for you.</p>
+        			</div>
+        		</div>
+        		<div class="why-card">
+            		<div class="why-icon"><i class="fa-solid fa-mountain-sun"></i></div>
+            			<h2>Experience Incredible India</h2>
+			            <p>
+            			    Celebrate India's traditions,natural beauty, festivals and vibrant culture.
+            			</p>
+        			</div>
+        		</div>
+    		</div>
+		</section>
+<!------------------Destination section-------------------------------->
+<section id="explore-destinations">
+    <h2>Explore Destinations</h2>
+    <div id="destination-container"></div>
+</section>
+
+
+
+
+
+
+<!-----------Contact Section=----------------------------------------------------------->
+		<section id="contact">
+			<h1>Lets plan your next journey</h1>
+			<h1>Get in Touch</h1>
+			<p class="contact-heading">
+			Have questions or travel suggestions? We'd love to hear from you.Reach out and let's make your journey across India even more memorable.</p>
+			<div class="contact-container">
+				<div class="contact-info">
+					<h2>Contact Information</h2>
+					<div class="info">
+						<i class="fa-solid fa-location-dot"></i>
+						<span>Vijayawada,Andhra Pradesh</span>
+					</div>
+					<div class="info">
+						<i class="fa-solid fa-phone"></i>
+						<span>+91 98765 43210</span>
+					</div>
+					<div class="info">
+						<i class="fa-solid fa-envelope"></i>
+						<span>explorebharat@gmail.com</span>
+					</div>
+					<div class="info">
+						<i class="fa-solid fa-clock"></i>
+						<span>Mon-Sat : 10:00AM-5:00PM</span>
+					</div>
+				</div>
+				<div class="contact-form">
+					<form>
+						<input type="text" placeholder="Enter your name" required>
+						<input type="email" placeholder="Enter your email" required>
+						<input type="text" placeholder="Subject">
+						<textarea rows="3" placeholder="Write your message here......."></textarea>
+						<button type="submit">Send Message</button>
+					</form>
+				</div>
+			</div>
+		</section>
+<!-----------------Footer------------------------------------------------------------------------->
+		<footer id="footer">
+			<div class="footer-container">
+				<div class="footer-box">
+					<h2>Explore Bharat</h2>
+					<p>Discover the beauty,heritage,<br>spirituality and culture of India.<br>
+					Your journey begins here.</p>
+				</div>
+				<div class="footer-box">
+					<h3>Quick Lines</h3>
+					<a href="#home">Home</a>
+					<a href="#about">About</a>
+					<a href="#category">Category</a>
+					<a href="#contact">Contact</a>
+				</div>
+				<div class="footer-box">
+					<h3>Categories</h3>
+					<a href="#spiritual">SpiritualIndia</a>
+					<a href="#heritage">Heritage</a>
+					<a href="#category">Nature</a>
+				</div>
+				<div class="footer-box">
+					<h3>Follow Us</h3>
+					<div class="social-icons">
+						<a href="https://www.linkedin.com/in/susmitha-kotyada-92479131a"><i class="fa-brands fa-linkedin-in"></i></a>
+						<a href="https://github.com/Susmitha-kotyada"><i class="fa-brands fa-github"></i></a>
+						<a href=""><i class="fa-brands fa-facebook-f"></i></a>
+						<a href=""><i class="fa-brands fa-instagram"></i></a>
+						<a href="https://www.kotyadasusmitha05@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<p class="copy-right">
+				&#169; 2026 Explore Bharat | Made with <i class="fa-solid fa-heart heart"></i> in India
+			</p>
+			
+		</footer>
+		<button id="topbtn" onclick="topFunction()">⬆</button>
+		<script src="Travel.js"></script>
+
+	</body>
+</html>
