@@ -188,12 +188,13 @@ body{
 	object-fit: cover;
 }
 /*-----------------------------------Spiritual Section------------------------------------*/
-#spiritual{
+
+#spiritual,#heritage{
 	display: none;
 	justify-content: center;
 	
 }
-#spiritual h1{
+#spiritual h1,#heritage h1{
 	margin-top: 30px;
 	text-align: center;
 	color: darkblue;
@@ -203,29 +204,29 @@ body{
 	text-decoration: underline;
 }
 
-.spiritual-row{
+.spiritual-row,.heritage-row{
 	display: flex;
 	justify-content: center;
 	gap: 35px;
 	margin-top: 70px;
 }
-.spiritual-card{
+.spiritual-card,.heritage-card{
 	width: 300px;
 	height: 200px;
 	position: relative;
 }
-.spiritual-card img{
+.spiritual-card img,.heritage-card img{
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	border-radius: 20px;
 	border: 8px double blue;
 }
-.spiritual-card img:hover{
+.spiritual-card img:hover , .heritage-card img:hover{
 	transform: translateY(-15px);
 	box-shadow: 5px 3px 15px blue, 5px 5px 10px white;
 }
-.spiritual-card h3{
+.spiritual-card h3,.heritage-card h3{
 	position: absolute;
 	margin-top: 3px;
 	color: darkblue;
@@ -236,29 +237,30 @@ body{
 	
 }
 
-.temples{
+.temples,.ancients{
     display:none;
     margin-top:80px;
     text-align:center;
 }
 
-.temples img{
+.temples img,.ancients img{
     width:100%;
     max-width: 600px;
     height:400px;
     object-fit:cover;
     border-radius:15px;
-    border: 5px solid white;
+    border: 5px solid whitesmoke;
 }
-.temples p,h2{
+.temples p,.temples h2,.ancients p,.ancients h2{
 	font-size: 2rem;
 	color: darkblue;
 }
-.temples button{
+.temples button,.ancients button{
 	font-size: 20px;
 	color: white;
 	background: black;
 	padding: 15px 20px;
+	margin-top: 10px;
 }
 
 .back{
@@ -268,82 +270,8 @@ body{
 	border-radius: 5px;
 	font-size: 1.3rem;
 }
-/*---------------------------------Heritage Section------------------------------------*/
-#heritage{
-	display: none;
-	justify-content: center;
-	
-}
-#heritage h1{
-	margin-top: 30px;
-	text-align: center;
-	color: darkblue;
-	margin-top: 50px;
-	font-size: 3rem;
-	font-weight: bold;
-	text-decoration: underline;
-}
 
-.heritage-row{
-	display: flex;
-	justify-content: center;
-	gap: 35px;
-	margin-top: 70px;
-}
-.heritage-card{
-	width: 320px;
-	max-width: 90%;
-	height: 200px;
-	position: relative;
-	cursor: pointer;
-}
-.heritage-card img{
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	border-radius: 20px;
-	border: 8px double blue;
-}
-.heritage-card img:hover{
-	transform: translateY(-15px);
-	box-shadow: 5px 3px 15px blue, 5px 5px 10px white;
-}
-.heritage-card h3{
-	
-	margin-top: 3px;
-	color: darkblue;
-	font-size: 1.5rem;
-	justify-items: center;
-	text-decoration: underline;
-	margin-left: 10px;
-	
-}
-
-.ancients{
-    display:none;
-    margin-top:80px;
-    text-align:center;
-}
-
-.ancients img{
-    width:600px;
-    height:400px;
-    object-fit:cover;
-    border-radius:15px;
-    border: 5px solid white;
-}
-.ancients p,.ancients h2{
-	font-size: 2rem;
-	color: darkblue;
-}
-.ancients button{
-	font-size: 20px;
-	color: white;
-	background: black;
-}
-
-
-/*--------------------------------About Section-------------------------------------------*/
+/*--------------------------------About Section----------------------------------------------------*/
 #about{
     padding:80px 8%;
     background: #f5f9ff;
@@ -810,4 +738,35 @@ nav ul{
     padding:0 15px;
     line-height:1.6;
     text-align:justify;
+}
+
+
+/*----------------------------------------------*/
+.back {
+    display: block;
+    margin: 40px auto;
+}
+/*
+#heritage-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:50px;
+    margin-bottom:60px;
+    align-items: center;
+}*/
+#temple-container,#heritage-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:40px;
+    margin-top:40px;
+    margin-bottom: 80px;
+}
+
+.spiritual-card-row{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    margin-top:50px;
 }

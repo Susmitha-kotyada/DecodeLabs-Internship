@@ -190,3 +190,242 @@ async function loadDestinations() {
 }
 
 loadDestinations();
+
+/*-------------------------------------------------------------------------------------------------*/
+
+function createRows(data, containerId, cardClass, clickHandler) {
+
+    const container = document.getElementById(containerId);
+    container.innerHTML = "";
+
+    for (let i = 0; i < data.length; i += 3) {
+
+        const row = document.createElement("div");
+        row.className = cardClass + "-row";
+
+        const rowItems = data.slice(i, i + 3);
+
+        rowItems.forEach(place => {
+
+            const card = document.createElement("div");
+            card.className = cardClass;
+
+            card.innerHTML = `
+                <img src="${place.image}" alt="${place.name}">
+                <h3>${place.name}</h3>
+            `;
+
+            card.onclick = () => clickHandler(place);
+
+            row.appendChild(card);
+
+        });
+
+        container.appendChild(row);
+    }
+}
+
+
+
+/*---------------------------------------Load Heritages--------------------------------------------------------*/
+/*
+async function loadHeritage() {
+    try {
+        const response = await fetch("http://localhost:5000/api/destinations/category/Heritage");
+        const heritagePlaces = await response.json();
+
+        const container = document.getElementById("heritage-container");
+        container.innerHTML = "";
+
+        heritagePlaces.forEach(place => {
+            const card = document.createElement("div");
+            card.className = "heritage-card";
+
+            card.innerHTML = `
+                <img src="${place.image}" alt="${place.name}">
+                <h3>${place.name}</h3>
+            `;
+            card.dataset.id = place._id;
+
+            card.onclick = function () {
+
+    if(place.name === "Taj Mahal"){
+        showTaj();
+    }
+    else if(place.name === "Hampi"){
+        showHampi();
+    }
+    else if(place.name === "KonarkSun Temple"){
+        showKonark();
+    }
+    else if(place.name === "Ajantha Caves"){
+        showAjantha();
+    }
+    else if(place.name === "Ellora Caves"){
+        showEllora();
+    }
+
+};
+
+
+            container.appendChild(card);
+        });
+
+    } catch (error) {
+        console.error("Error loading heritage places:", error);
+    }
+}
+
+loadHeritage();
+*/
+/*-----------------------------------------------------------------Load Temples--------------------------*/
+/*
+async function loadTemples() {
+    try {
+        const response = await fetch("http://localhost:5000/api/destinations/category/Temple");
+        const temples = await response.json();
+
+        const container = document.getElementById("temple-container");
+        container.innerHTML = "";
+
+        createRows(
+    temples,
+    "temple-container",
+    "spiritual-card",
+    function(place){
+
+        switch(place.name){
+
+            case "Tirumala":
+                showTirumala();
+                break;
+
+            case "Meenakshi Temple":
+                showMeenakshi();
+                break;
+
+            case "Kashi":
+                showKashi();
+                break;
+
+            case "Puri":
+                showPuri();
+                break;
+
+            case "Kedarnath":
+                showKedar();
+                break;
+        }
+
+    }
+);
+    } catch (error) {
+        console.error("Error loading temples:", error);
+    }
+}
+
+loadTemples();
+*/
+/*--------------------------------------------Load Category-----------------------------------*/
+async function loadCategory(category, containerId, cardClass, clickHandler) {
+
+    try {
+
+        const response = await fetch(`http://localhost:5000/api/destinations/category/${category}`);
+        const places = await response.json();
+
+        const container = document.getElementById(containerId);
+        container.innerHTML = "";
+
+        // Create rows (3 cards per row)
+        for (let i = 0; i < places.length; i += 3) {
+
+            const row = document.createElement("div");
+            row.className = cardClass.replace("card", "row");
+
+            const currentRow = places.slice(i, i + 3);
+
+            currentRow.forEach(place => {
+
+                const card = document.createElement("div");
+                card.className = cardClass;
+
+                card.innerHTML = `
+                    <img src="${place.image}" alt="${place.name}">
+                    <h3>${place.name}</h3>
+                `;
+
+                card.onclick = () => clickHandler(place);
+
+                row.appendChild(card);
+
+            });
+
+            container.appendChild(row);
+        }
+
+    } catch (error) {
+
+        console.log(error);
+
+    }
+
+}
+/*----------------------------------------Call for temples---------------------------------------------*/
+loadCategory(
+    "Temple",
+    "temple-container",
+    "spiritual-card",
+    function(place){
+        switch(place.name){
+            case "Tirumala":
+                showTirumala();
+                break;
+
+            case "Meenakshi Temple":
+                showMeenakshi();
+                break;
+
+            case "Kashi":
+                showKashi();
+                break;
+
+            case "Puri":
+                showPuri();
+                break;
+
+            case "Kedarnath":
+                showKedar();
+                break;
+        }
+    }
+);
+/*----------------------------------------------------Call for heritage-----------------------------*/
+loadCategory(
+    "Heritage",
+    "heritage-container",
+    "heritage-card",
+    function(place){
+        switch(place.name){
+            case "Taj Mahal":
+                showTaj();
+                break;
+
+            case "Hampi":
+                showHampi();
+                break;
+
+            case "KonarkSun Temple":
+                showKonark();
+                break;
+
+            case "Ajantha Caves":
+                showAjantha();
+                break;
+
+            case "Ellora Caves":
+                showEllora();
+                break;
+        }
+    }
+);

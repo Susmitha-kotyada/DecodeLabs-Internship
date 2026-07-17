@@ -39,4 +39,24 @@ router.get("/category/:category", async (req, res) => {
     }
 });
 
+// GET one destination by ID
+router.get("/:id", async (req, res) => {
+    try {
+        const destination = await Destination.findById(req.params.id);
+
+        if (!destination) {
+            return res.status(404).json({
+                message: "Destination not found"
+            });
+        }
+
+        res.json(destination);
+
+    } catch (error) {
+        res.status(500).json({
+            message: error.message
+        });
+    }
+});
+
 module.exports = router;
