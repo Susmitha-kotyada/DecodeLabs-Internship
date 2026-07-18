@@ -4,6 +4,7 @@ function showSpiritual(){
      document.getElementById("beach").style.display = "none";
      document.getElementById("hillstation").style.display = "none";
      document.getElementById("city").style.display = "none";
+    document.getElementById("nature").style.display = "none";
 }
 function showTirumala() {
     document.getElementById("spiritual").style.display = "none";
@@ -60,6 +61,7 @@ function backtoCategories() {
     document.getElementById("beach").style.display="none";
     document.getElementById("hillstation").style.display="none";
     document.getElementById("city").style.display = "none";
+    document.getElementById("nature").style.display = "none";
     
 }
 function showHeritage(){
@@ -68,6 +70,7 @@ function showHeritage(){
      document.getElementById("beach").style.display = "none";
      document.getElementById("hillstation").style.display = "none";
      document.getElementById("city").style.display = "none";
+    document.getElementById("nature").style.display = "none";
 }
 function showTaj() {
     document.getElementById("heritage").style.display = "none";
@@ -120,9 +123,10 @@ function backToHeritage() {
 
 function showBeach(){
     document.getElementById("spiritual").style.display = "none";
-     document.getElementById("heritage").style.display = "none";
-     document.getElementById("hillstation").style.display = "none";
-     document.getElementById("city").style.display = "none";
+    document.getElementById("heritage").style.display = "none";
+    document.getElementById("hillstation").style.display = "none";
+    document.getElementById("city").style.display = "none";
+    document.getElementById("nature").style.display = "none";
     document.getElementById("beach").style.display = "block";
     document.getElementById("beach").scrollIntoView({
         behavior: "smooth"
@@ -166,6 +170,7 @@ function showHillStation(){
      document.getElementById("heritage").style.display = "none";
     document.getElementById("beach").style.display = "none";
     document.getElementById("city").style.display = "none";
+    document.getElementById("nature").style.display = "none";
     document.getElementById("hillstation").style.display = "block";
     document.getElementById("hillstation").scrollIntoView({
         behavior: "smooth"
@@ -211,6 +216,7 @@ function showCity(){
      document.getElementById("heritage").style.display = "none";
     document.getElementById("beach").style.display = "none";
     document.getElementById("hillstation").style.display = "none";
+    document.getElementById("nature").style.display = "none";
     document.getElementById("city").style.display = "block";
     document.getElementById("city").scrollIntoView({
         behavior: "smooth"
@@ -249,11 +255,52 @@ function backToCity(){
     });
 }
 
-
-
-function showNature() {
-    alert("🚧 This category is under development. Please explore Spiritual India and Heritage in the meantime!");
+function showNature(){
+    document.getElementById("spiritual").style.display = "none";
+     document.getElementById("heritage").style.display = "none";
+    document.getElementById("beach").style.display = "none";
+    document.getElementById("hillstation").style.display = "none";
+    document.getElementById("city").style.display = "none";
+    document.getElementById("nature").style.display = "block";
+    document.getElementById("nature").scrollIntoView({
+        behavior: "smooth"
+    });
 }
+
+function showDudhSagar(){
+    document.getElementById("nature").style.display = "none";
+    document.getElementById("dudhsagar").style.display = "block";
+    document.getElementById("dudhsagar").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+function showValleyofFlowers(){
+    document.getElementById("nature").style.display = "none";
+    document.getElementById("valleyofflowers").style.display = "block";
+    document.getElementById("valleyofflowers").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+function showRannofKutch(){
+    document.getElementById("nature").style.display = "none";
+    document.getElementById("rannofkutch").style.display = "block";
+    document.getElementById("rannofkutch").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+function backToNature(){
+    document.getElementById("dudhsagar").style.display="none";
+    document.getElementById("valleyofflowers").style.display="none";
+    document.getElementById("rannofkutch").style.display="none";
+    document.getElementById("nature").style.display="block";
+    document.getElementById("nature").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+
+
 
 let mybutton=document.getElementById("topbtn");
 window.onscroll=function(){
@@ -300,14 +347,11 @@ async function loadDestinations() {
     try {
         const response = await fetch("http://localhost:5000/api/destinations");
         const destinations = await response.json();
-
         const container = document.getElementById("destination-container");
         container.innerHTML = "";
-
         destinations.forEach(destination => {
             const card = document.createElement("div");
             card.className = "destination-card";
-
             card.innerHTML = `
                 <img src="${destination.image}" alt="${destination.name}">
                 <h3>${destination.name}</h3>
@@ -315,50 +359,36 @@ async function loadDestinations() {
                 <p><strong>Location:</strong> ${destination.location}</p>
                 <p>${destination.description}</p>
             `;
-
             container.appendChild(card);
         });
     } catch (error) {
         console.error("Error loading destinations:", error);
     }
 }
-
 loadDestinations();
 
 /*-------------------------------------------------------------------------------------------------*/
 
 function createRows(data, containerId, cardClass, clickHandler) {
-
     const container = document.getElementById(containerId);
     container.innerHTML = "";
-
     for (let i = 0; i < data.length; i += 3) {
-
         const row = document.createElement("div");
         row.className = cardClass + "-row";
-
         const rowItems = data.slice(i, i + 3);
-
         rowItems.forEach(place => {
-
             const card = document.createElement("div");
             card.className = cardClass;
-
             card.innerHTML = `
                 <img src="${place.image}" alt="${place.name}">
                 <h3>${place.name}</h3>
             `;
-
             card.onclick = () => clickHandler(place);
-
             row.appendChild(card);
-
         });
-
         container.appendChild(row);
     }
 }
-
 
 
 /*---------------------------------------Load Heritages--------------------------------------------------------*/
@@ -605,7 +635,7 @@ loadCategory(
 );
 
 
-/*-------------------------------Call for City------------------------------------------*/
+/*-------------------------------Call for City--------------------------------------------------*/
 loadCategory(
     "City",
     "city-container",
@@ -620,6 +650,26 @@ loadCategory(
                 break;
             case "Hyderabad":
                 showHyderabad();
+                break;
+        }
+    }
+);
+
+/*-------------------------------Call for Nature------------------------------------------------*/
+loadCategory(
+    "Nature",
+    "nature-container",
+    "nature-card",
+    function(place){
+        switch(place.name){
+            case "Dudhsagar Falls":
+                showDudhSagar();
+                break;
+            case "Valley of Flowers":
+                showValleyofFlowers();
+                break;
+            case "Rann of Kutch":
+                showRannofKutch();
                 break;
         }
     }
