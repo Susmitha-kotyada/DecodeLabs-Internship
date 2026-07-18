@@ -2,6 +2,8 @@ function showSpiritual(){
 	document.getElementById("spiritual").style.display="block";
     document.getElementById("heritage").style.display="none";
      document.getElementById("beach").style.display = "none";
+     document.getElementById("hillstation").style.display = "none";
+     document.getElementById("city").style.display = "none";
 }
 function showTirumala() {
     document.getElementById("spiritual").style.display = "none";
@@ -56,12 +58,16 @@ function backtoCategories() {
     document.getElementById("spiritual").style.display="none";
     document.getElementById("heritage").style.display="none";
     document.getElementById("beach").style.display="none";
+    document.getElementById("hillstation").style.display="none";
+    document.getElementById("city").style.display = "none";
     
 }
 function showHeritage(){
 	document.getElementById("heritage").style.display="block";
     document.getElementById("spiritual").style.display="none";
      document.getElementById("beach").style.display = "none";
+     document.getElementById("hillstation").style.display = "none";
+     document.getElementById("city").style.display = "none";
 }
 function showTaj() {
     document.getElementById("heritage").style.display = "none";
@@ -115,6 +121,8 @@ function backToHeritage() {
 function showBeach(){
     document.getElementById("spiritual").style.display = "none";
      document.getElementById("heritage").style.display = "none";
+     document.getElementById("hillstation").style.display = "none";
+     document.getElementById("city").style.display = "none";
     document.getElementById("beach").style.display = "block";
     document.getElementById("beach").scrollIntoView({
         behavior: "smooth"
@@ -148,19 +156,102 @@ function backToBeaches(){
     document.getElementById("radhanagar").style.display="none";
     document.getElementById("beach").style.display="block";
 
-    document.getElementById("heritage").scrollIntoView({
+    document.getElementById("beach").scrollIntoView({
         behavior: "smooth"
     });
 }
 
 function showHillStation(){
-    alert("🚧 This category is under development. Please explore Spiritual India and Heritage in the meantime!");
-}
-function showNature() {
-    alert("🚧 This category is under development. Please explore Spiritual India and Heritage in the meantime!");
+    document.getElementById("spiritual").style.display = "none";
+     document.getElementById("heritage").style.display = "none";
+    document.getElementById("beach").style.display = "none";
+    document.getElementById("city").style.display = "none";
+    document.getElementById("hillstation").style.display = "block";
+    document.getElementById("hillstation").scrollIntoView({
+        behavior: "smooth"
+    });
 }
 
-function showCity() {
+function showOoty(){
+    document.getElementById("hillstation").style.display = "none";
+    document.getElementById("ooty").style.display = "block";
+    document.getElementById("ooty").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+function showMunnar(){
+    document.getElementById("hillstation").style.display = "none";
+    document.getElementById("munnar").style.display = "block";
+    document.getElementById("munnar").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+function showDarjeeling(){
+    document.getElementById("hillstation").style.display = "none";
+    document.getElementById("darjeeling").style.display = "block";
+    document.getElementById("darjeeling").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+function backToHillStations(){
+    document.getElementById("ooty").style.display="none";
+    document.getElementById("munnar").style.display="none";
+    document.getElementById("darjeeling").style.display="none";
+    document.getElementById("hillstation").style.display="block";
+
+    document.getElementById("hillstation").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+
+function showCity(){
+    document.getElementById("spiritual").style.display = "none";
+     document.getElementById("heritage").style.display = "none";
+    document.getElementById("beach").style.display = "none";
+    document.getElementById("hillstation").style.display = "none";
+    document.getElementById("city").style.display = "block";
+    document.getElementById("city").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function showVizag(){
+    document.getElementById("city").style.display = "none";
+    document.getElementById("vizag").style.display = "block";
+    document.getElementById("vizag").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+function showHyderabad(){
+    document.getElementById("city").style.display = "none";
+    document.getElementById("hyderabad").style.display = "block";
+    document.getElementById("hyderabad").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+function showDelhi(){
+    document.getElementById("city").style.display = "none";
+    document.getElementById("delhi").style.display = "block";
+    document.getElementById("delhi").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+function backToCity(){
+    document.getElementById("vizag").style.display="none";
+    document.getElementById("hyderabad").style.display="none";
+    document.getElementById("delhi").style.display="none";
+    document.getElementById("city").style.display="block";
+    document.getElementById("city").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+
+
+function showNature() {
     alert("🚧 This category is under development. Please explore Spiritual India and Heritage in the meantime!");
 }
 
@@ -488,6 +579,47 @@ loadCategory(
                 break;
             case "Radhanagar Beach":
                 showRadhanagar();
+                break;
+        }
+    }
+);
+
+/*-------------------------------Call for HillStation------------------------------------------*/
+loadCategory(
+    "Hill Station",
+    "hillstation-container",
+    "hillstation-card",
+    function(place){
+        switch(place.name){
+            case "Ooty":
+                showOoty();
+                break;
+            case "Munnar":
+                showMunnar();
+                break;
+            case "Darjeeling":
+                showDarjeeling();
+                break;
+        }
+    }
+);
+
+
+/*-------------------------------Call for City------------------------------------------*/
+loadCategory(
+    "City",
+    "city-container",
+    "city-card",
+    function(place){
+        switch(place.name){
+            case "Visakhapatnam":
+                showVizag();
+                break;
+            case "Delhi":
+                showDelhi();
+                break;
+            case "Hyderabad":
+                showHyderabad();
                 break;
         }
     }
