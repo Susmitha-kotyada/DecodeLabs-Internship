@@ -189,12 +189,12 @@ body{
 }
 /*-----------------------------------Spiritual Section------------------------------------*/
 
-#spiritual,#heritage{
+#spiritual,#heritage,#beach{
 	display: none;
 	justify-content: center;
 	
 }
-#spiritual h1,#heritage h1{
+#spiritual h1,#heritage h1,#beach h1{
 	margin-top: 30px;
 	text-align: center;
 	color: darkblue;
@@ -204,29 +204,29 @@ body{
 	text-decoration: underline;
 }
 
-.spiritual-row,.heritage-row{
+.spiritual-row,.heritage-row,.beach-row{
 	display: flex;
 	justify-content: center;
 	gap: 35px;
 	margin-top: 70px;
 }
-.spiritual-card,.heritage-card{
+.spiritual-card,.heritage-card,.beach-card{
 	width: 300px;
 	height: 200px;
 	position: relative;
 }
-.spiritual-card img,.heritage-card img{
+.spiritual-card img,.heritage-card img,.beach-card img{
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	border-radius: 20px;
 	border: 8px double blue;
 }
-.spiritual-card img:hover , .heritage-card img:hover{
+.spiritual-card img:hover , .heritage-card img:hover,.beach-card img:hover{
 	transform: translateY(-15px);
 	box-shadow: 5px 3px 15px blue, 5px 5px 10px white;
 }
-.spiritual-card h3,.heritage-card h3{
+.spiritual-card h3,.heritage-card h3,.beach-card h3{
 	position: absolute;
 	margin-top: 3px;
 	color: darkblue;
@@ -755,7 +755,7 @@ nav ul{
     margin-bottom:60px;
     align-items: center;
 }*/
-#temple-container,#heritage-container{
+#temple-container,#heritage-container,#beach-container{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;

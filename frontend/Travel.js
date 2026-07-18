@@ -1,6 +1,7 @@
 function showSpiritual(){
 	document.getElementById("spiritual").style.display="block";
     document.getElementById("heritage").style.display="none";
+     document.getElementById("beach").style.display = "none";
 }
 function showTirumala() {
     document.getElementById("spiritual").style.display = "none";
@@ -54,11 +55,13 @@ function backToSpiritual() {
 function backtoCategories() {
     document.getElementById("spiritual").style.display="none";
     document.getElementById("heritage").style.display="none";
+    document.getElementById("beach").style.display="none";
     
 }
 function showHeritage(){
 	document.getElementById("heritage").style.display="block";
     document.getElementById("spiritual").style.display="none";
+     document.getElementById("beach").style.display = "none";
 }
 function showTaj() {
     document.getElementById("heritage").style.display = "none";
@@ -108,15 +111,55 @@ function backToHeritage() {
         behavior: "smooth"
     });
 }
+
+function showBeach(){
+    document.getElementById("spiritual").style.display = "none";
+     document.getElementById("heritage").style.display = "none";
+    document.getElementById("beach").style.display = "block";
+    document.getElementById("beach").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function showGoa(){
+    document.getElementById("beach").style.display = "none";
+    document.getElementById("goa").style.display = "block";
+    document.getElementById("goa").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+function showMarina(){
+    document.getElementById("beach").style.display = "none";
+    document.getElementById("marina").style.display = "block";
+    document.getElementById("marina").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+function showRadhanagar(){
+    document.getElementById("beach").style.display = "none";
+    document.getElementById("radhanagar").style.display = "block";
+    document.getElementById("radhanagar").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+function backToBeaches(){
+    document.getElementById("goa").style.display="none";
+    document.getElementById("marina").style.display="none";
+    document.getElementById("radhanagar").style.display="none";
+    document.getElementById("beach").style.display="block";
+
+    document.getElementById("heritage").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
 function showHillStation(){
     alert("🚧 This category is under development. Please explore Spiritual India and Heritage in the meantime!");
 }
 function showNature() {
     alert("🚧 This category is under development. Please explore Spiritual India and Heritage in the meantime!");
 }
-function showBeach() {
-    alert("🚧 This category is under development. Please explore Spiritual India and Heritage in the meantime!");
-}
+
 function showCity() {
     alert("🚧 This category is under development. Please explore Spiritual India and Heritage in the meantime!");
 }
@@ -425,6 +468,26 @@ loadCategory(
 
             case "Ellora Caves":
                 showEllora();
+                break;
+        }
+    }
+);
+
+/*------------------------------------------Call for Beaches---------------------------------------------*/
+loadCategory(
+    "Beach",
+    "beach-container",
+    "beach-card",
+    function(place){
+        switch(place.name){
+            case "Goa Beach":
+                showGoa();
+                break;
+            case "Marina Beach":
+                showMarina();
+                break;
+            case "Radhanagar Beach":
+                showRadhanagar();
                 break;
         }
     }
