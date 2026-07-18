@@ -135,7 +135,7 @@ body{
 }
 /*-----------------------------------Category Section-----------------------------------------*/
 .categories{
-	margin-top: 130px;
+	margin-top: 40px;
 
 }
 .categories h1{
@@ -746,8 +746,7 @@ nav ul{
     display: block;
     margin: 40px auto;
 }
-
-#temple-container,#heritage-container,#beach-container,#hillstation-container,#city-container,#nature-container{
+.cards-container{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
@@ -761,4 +760,23 @@ nav ul{
     justify-content:center;
     gap:50px;
     margin-top:50px;
+}
+/*---------------------------Search Section-------------------------------------*/
+.search-box{
+    text-align:center;
+    margin-top: 50px;
+}
+
+#searchInput{
+    width:500px;
+    padding:12px;
+    border-radius:30px;
+    border:2px solid #ccc;
+    font-size:16px;
+    outline:none;
+    margin-top: 30px;
+}
+
+#searchInput:focus{
+    border-color:#2e8b57;
 }

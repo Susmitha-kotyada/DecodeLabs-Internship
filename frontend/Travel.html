@@ -36,22 +36,40 @@
 				</div>
 			</div>
 		</section>
+
+<!--------------------------------------Search Section-------------------------------------------->
+		<div class="search-box">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="🔍 Search places..."
+    >
+</div>
+
+<section id="search-section" style="display:none;">
+    <h1>Search Results</h1>
+
+    <div id="search-container" class="cards-container"></div>
+
+    <button class="back" onclick="backtoCategories()">
+        Back to Categories
+    </button>
+</section>
 <!-------------------------------------------Category Section-------------------------------------->		
 		<section class="categories" id="category">
 			<h1 class="section-title fade">Explore Categories</h1>
 			<div class="category">
-			<a href="#spiritual">
 				<div class="category-card" onclick="showSpiritual()">
 					<img src="images\spiritualindia.jpeg" alt="temples"/>
 					<h3>Spiritual India</h3>
 				</div>
-			</a>
-			<a href="#heritage">
+			
+			
 				<div class="category-card" onclick="showHeritage()">
 					<img src="images\heritage.jpeg" alt="heritage"/>
 					<h3>Heritage</h3>
 				</div>
-			</a>
+			
 				<div class="category-card" onclick="showHillStation()">
 					<img src="images\hillstations.jpeg" alt="hillstation"/>
 					<h3>HillStations</h3>
@@ -73,31 +91,7 @@
 <!-- Spiritual section----------------------------------------------------------------------------->
 		<section id="spiritual">
     			<h1>...Welcome to Spiritual India...</h1>   		
-    		<div class="spiritual-row" id="temple-container">
-    <!--			<div class="spiritual-card" onclick="showTirumala()">
-    				<img src="images\tirumalaa.jpeg" alt="tirumala"/>
-    				<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tirumala</h3>
-    			</div>
-    			<div class="spiritual-card"
-    			onclick="showMeenakshi()">
-    				<img src="images\meenakshi.jpeg" alt="meenakshiamman"/>
-    				<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MeenakshiAmman</h3>
-    			</div>
-    			<div class="spiritual-card" onclick="showKashi()">
-    				<img src="images\kashii.jpeg" alt="kashi"/>
-    				<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kashi Viswanath</h3>
-    			</div>
-    		</div>
-    		<div class="spiritual-row">
-    			<div class="spiritual-card" onclick="showKedar()">
-    				<img src="images\kedar.jpeg" alt="kedarnath"/>
-    				<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kedarnath</h3>
-    			</div>
-    			<div class="spiritual-card" onclick="showPuri()">
-    				<img src="images\purii.jpeg" alt="puri"/>
-    				<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JaganathSwamy</h3>
-    			</div>
-    -->		</div>
+    		<div class="cards-container" id="temple-container"></div>
     		<button class="back" onclick="backtoCategories()">Back to Categories</button>
 		</section>
 		
@@ -169,7 +163,7 @@
 <!-- --------Heritage section---------------------------------------------------------------------->
 		<section id="heritage">
     			<h1>...Welcome to Heritage of India...</h1>   		
-    		<div class="heritage-row" id="heritage-container"></div>
+    		<div class="cards-container" id="heritage-container"></div>
     		<button class="back" onclick="backtoCategories()">Back to Categories</button>
 		</section>
 
@@ -249,7 +243,7 @@
 
 <section id="beach">
     <h1>...Welcome to Beautiful Beaches of India...</h1>
-    <div id="beach-container"></div>
+    <div id="beach-container" class="cards-container"></div>
     <button class="back" onclick="backtoCategories()">
         Back to Categories
     </button>
@@ -299,7 +293,7 @@
 <!-- ------------------------HillStations Section------------------------------------------------------>
 <section id="hillstation">
     <h1>...Welcome to HillStations of India...</h1>
-    <div id="hillstation-container"></div>
+    <div id="hillstation-container"class="cards-container"></div>
     <button class="back" onclick="backtoCategories()">
         Back to Categories
     </button>
@@ -343,7 +337,7 @@
 <!-- ------------------------City Section----------------------------------------------------------->
 <section id="city">
     <h1>...Welcome to Famous Cities of India...</h1>
-    <div id="city-container"></div>
+    <div id="city-container" class="cards-container"></div>
     <button class="back" onclick="backtoCategories()">
         Back to Categories
     </button>
@@ -385,10 +379,10 @@
 </section>
 
 
-<!-- --------------------------Nature Section----------------------------------------------------------->
+<!-- --------------------------Nature Section---------------------------------------------------------->
 <section id="nature">
     <h1>...Welcome to Nature of India...</h1>
-    <div id="nature-container"></div>
+    <div id="nature-container" class="cards-container"></div>
     <button class="back" onclick="backtoCategories()">
         Back to Categories
     </button>
@@ -405,7 +399,7 @@
         ← Back to Nature
     </button>
 </section>
-<!-----------------------------Valley of Flowers Section------------------------------------------------>
+<!-----------------------------Valley of Flowers Section---------------------------------------------->
 <section id="valleyofflowers" class="ancients">
     <h1>Valley Of Flowers</h1>
     <img src="images/valleyofflowerss.jpeg" alt="Valley of Flowers">
@@ -515,7 +509,6 @@
 
 
 
-
 <!-----------Contact Section=----------------------------------------------------------->
 		<section id="contact">
 			<h1>Lets plan your next journey</h1>
@@ -570,18 +563,19 @@
 				</div>
 				<div class="footer-box">
 					<h3>Categories</h3>
-					<a href="#spiritual">SpiritualIndia</a>
-					<a href="#heritage">Heritage</a>
+					<a href="#category">SpiritualIndia</a>
+					<a href="#category">Heritage</a>
 					<a href="#category">Nature</a>
+					<a href="#category">HillStations</a>
 				</div>
 				<div class="footer-box">
 					<h3>Follow Us</h3>
 					<div class="social-icons">
-						<a href="https://www.linkedin.com/in/susmitha-kotyada-92479131a"><i class="fa-brands fa-linkedin-in"></i></a>
-						<a href="https://github.com/Susmitha-kotyada"><i class="fa-brands fa-github"></i></a>
+						<a href="https://www.linkedin.com/in/susmitha-kotyada-92479131a" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+						<a href="https://github.com/Susmitha-kotyada" target="_blank"><i class="fa-brands fa-github"></i></a>
 						<a href=""><i class="fa-brands fa-facebook-f"></i></a>
 						<a href=""><i class="fa-brands fa-instagram"></i></a>
-						<a href="https://www.kotyadasusmitha05@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+						<a href="https://www.kotyadasusmitha05@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a>
 					</div>
 				</div>
 			</div>

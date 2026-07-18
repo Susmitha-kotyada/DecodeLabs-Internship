@@ -1,3 +1,6 @@
+let allDestinations = [];
+
+
 function showSpiritual(){
 	document.getElementById("spiritual").style.display="block";
     document.getElementById("heritage").style.display="none";
@@ -5,6 +8,9 @@ function showSpiritual(){
      document.getElementById("hillstation").style.display = "none";
      document.getElementById("city").style.display = "none";
     document.getElementById("nature").style.display = "none";
+    document.getElementById("spiritual").scrollIntoView({
+        behavior: "smooth"
+    });
 }
 function showTirumala() {
     document.getElementById("spiritual").style.display = "none";
@@ -62,6 +68,8 @@ function backtoCategories() {
     document.getElementById("hillstation").style.display="none";
     document.getElementById("city").style.display = "none";
     document.getElementById("nature").style.display = "none";
+    document.getElementById("search-section").style.display = "none";
+    document.getElementById("searchInput").value = "";
     
 }
 function showHeritage(){
@@ -71,6 +79,9 @@ function showHeritage(){
      document.getElementById("hillstation").style.display = "none";
      document.getElementById("city").style.display = "none";
     document.getElementById("nature").style.display = "none";
+     document.getElementById("heritage").scrollIntoView({
+        behavior: "smooth"
+    });
 }
 function showTaj() {
     document.getElementById("heritage").style.display = "none";
@@ -390,208 +401,134 @@ function createRows(data, containerId, cardClass, clickHandler) {
     }
 }
 
-
-/*---------------------------------------Load Heritages--------------------------------------------------------*/
-/*
-async function loadHeritage() {
+/*--------------------------------------------Load Category-----------------------------------*/
+async function loadCategory(category, containerId, cardClass, clickHandler) {
     try {
-        const response = await fetch("http://localhost:5000/api/destinations/category/Heritage");
-        const heritagePlaces = await response.json();
+        const response = await fetch(`http://localhost:5000/api/destinations/category/${category}`);
+        const places = await response.json();
+        displayPlaces(places, containerId, cardClass, clickHandler);
+    } catch (error) {
+        console.log(error);
+    }
+}
 
-        const container = document.getElementById("heritage-container");
-        container.innerHTML = "";
+function displayPlaces(places, containerId, cardClass, clickHandler) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = "";
+    if (places.length === 0) {
+        container.innerHTML = `
+            <div class="no-results">
+                <h2>No Results Found 😔</h2>
+                <p>Try searching for another destination.</p>
+            </div>
+        `;
+        return;
+    }
 
-        heritagePlaces.forEach(place => {
+    for (let i = 0; i < places.length; i += 3) {
+        const row = document.createElement("div");
+        row.className = cardClass.replace("card", "row");
+        const currentRow = places.slice(i, i + 3);
+        currentRow.forEach(place => {
             const card = document.createElement("div");
-            card.className = "heritage-card";
-
+            card.className = cardClass;
             card.innerHTML = `
                 <img src="${place.image}" alt="${place.name}">
                 <h3>${place.name}</h3>
             `;
-            card.dataset.id = place._id;
-
-            card.onclick = function () {
-
-    if(place.name === "Taj Mahal"){
-        showTaj();
-    }
-    else if(place.name === "Hampi"){
-        showHampi();
-    }
-    else if(place.name === "KonarkSun Temple"){
-        showKonark();
-    }
-    else if(place.name === "Ajantha Caves"){
-        showAjantha();
-    }
-    else if(place.name === "Ellora Caves"){
-        showEllora();
-    }
-
-};
-
-
-            container.appendChild(card);
+            card.onclick = () => clickHandler(place);
+            row.appendChild(card);
         });
-
-    } catch (error) {
-        console.error("Error loading heritage places:", error);
+        container.appendChild(row);
     }
 }
 
-loadHeritage();
-*/
-/*-----------------------------------------------------------------Load Temples--------------------------*/
-/*
-async function loadTemples() {
-    try {
-        const response = await fetch("http://localhost:5000/api/destinations/category/Temple");
-        const temples = await response.json();
 
-        const container = document.getElementById("temple-container");
-        container.innerHTML = "";
+function openPlace(place){
 
-        createRows(
-    temples,
-    "temple-container",
-    "spiritual-card",
-    function(place){
+    switch(place.name){
 
-        switch(place.name){
-
-            case "Tirumala":
-                showTirumala();
-                break;
-
-            case "Meenakshi Temple":
-                showMeenakshi();
-                break;
-
-            case "Kashi":
-                showKashi();
-                break;
-
-            case "Puri":
-                showPuri();
-                break;
-
-            case "Kedarnath":
-                showKedar();
-                break;
-        }
-
+        case "Tirumala":
+            showTirumala();
+            break;
+        case "Meenakshi Temple":
+            showMeenakshi();
+            break;
+        case "Kashi":
+            showKashi();
+            break;
+        case "Puri":
+            showPuri();
+            break;
+        case "Kedarnath":
+            showKedar();
+            break;
+        case "Taj Mahal":
+            showTaj();
+            break;
+        case "Hampi":
+            showHampi();
+            break;
+        case "KonarkSun Temple":
+            showKonark();
+            break;
+        case "Ajantha Caves":
+            showAjantha();
+            break;
+        case "Ellora Caves":
+            showEllora();
+            break;
+        case "Goa Beach":
+            showGoa();
+            break;
+        case "Marina Beach":
+            showMarina();
+            break;
+        case "Radhanagar Beach":
+            showRadhanagar();
+            break;
+        case "Ooty":
+            showOoty();
+            break;
+        case "Munnar":
+            showMunnar();
+            break;
+        case "Darjeeling":
+            showDarjeeling();
+            break;
+        case "Visakhapatnam":
+            showVizag();
+            break;
+        case "Hyderabad":
+            showHyderabad();
+            break;
+        case "Delhi":
+            showDelhi();
+            break;
+        case "Dudhsagar Falls":
+            showDudhSagar();
+            break;
+        case "Valley of Flowers":
+            showValleyofFlowers();
+            break;
+        case "Rann of Kutch":
+            showRannofKutch();
+            break;
     }
-);
-    } catch (error) {
-        console.error("Error loading temples:", error);
-    }
-}
-
-loadTemples();
-*/
-/*--------------------------------------------Load Category-----------------------------------*/
-async function loadCategory(category, containerId, cardClass, clickHandler) {
-
-    try {
-
-        const response = await fetch(`http://localhost:5000/api/destinations/category/${category}`);
-        const places = await response.json();
-
-        const container = document.getElementById(containerId);
-        container.innerHTML = "";
-
-        // Create rows (3 cards per row)
-        for (let i = 0; i < places.length; i += 3) {
-
-            const row = document.createElement("div");
-            row.className = cardClass.replace("card", "row");
-
-            const currentRow = places.slice(i, i + 3);
-
-            currentRow.forEach(place => {
-
-                const card = document.createElement("div");
-                card.className = cardClass;
-
-                card.innerHTML = `
-                    <img src="${place.image}" alt="${place.name}">
-                    <h3>${place.name}</h3>
-                `;
-
-                card.onclick = () => clickHandler(place);
-
-                row.appendChild(card);
-
-            });
-
-            container.appendChild(row);
-        }
-
-    } catch (error) {
-
-        console.log(error);
-
-    }
-
 }
 /*----------------------------------------Call for temples---------------------------------------------*/
 loadCategory(
     "Temple",
     "temple-container",
     "spiritual-card",
-    function(place){
-        switch(place.name){
-            case "Tirumala":
-                showTirumala();
-                break;
-
-            case "Meenakshi Temple":
-                showMeenakshi();
-                break;
-
-            case "Kashi":
-                showKashi();
-                break;
-
-            case "Puri":
-                showPuri();
-                break;
-
-            case "Kedarnath":
-                showKedar();
-                break;
-        }
-    }
+    openPlace
 );
-/*----------------------------------------------------Call for heritage-----------------------------*/
+/*----------------------------------------Call for heritage---------------------------------------------*/
 loadCategory(
     "Heritage",
     "heritage-container",
     "heritage-card",
-    function(place){
-        switch(place.name){
-            case "Taj Mahal":
-                showTaj();
-                break;
-
-            case "Hampi":
-                showHampi();
-                break;
-
-            case "KonarkSun Temple":
-                showKonark();
-                break;
-
-            case "Ajantha Caves":
-                showAjantha();
-                break;
-
-            case "Ellora Caves":
-                showEllora();
-                break;
-        }
-    }
+    openPlace
 );
 
 /*------------------------------------------Call for Beaches---------------------------------------------*/
@@ -599,19 +536,7 @@ loadCategory(
     "Beach",
     "beach-container",
     "beach-card",
-    function(place){
-        switch(place.name){
-            case "Goa Beach":
-                showGoa();
-                break;
-            case "Marina Beach":
-                showMarina();
-                break;
-            case "Radhanagar Beach":
-                showRadhanagar();
-                break;
-        }
-    }
+    openPlace
 );
 
 /*-------------------------------Call for HillStation------------------------------------------*/
@@ -619,19 +544,7 @@ loadCategory(
     "Hill Station",
     "hillstation-container",
     "hillstation-card",
-    function(place){
-        switch(place.name){
-            case "Ooty":
-                showOoty();
-                break;
-            case "Munnar":
-                showMunnar();
-                break;
-            case "Darjeeling":
-                showDarjeeling();
-                break;
-        }
-    }
+    openPlace
 );
 
 
@@ -640,37 +553,40 @@ loadCategory(
     "City",
     "city-container",
     "city-card",
-    function(place){
-        switch(place.name){
-            case "Visakhapatnam":
-                showVizag();
-                break;
-            case "Delhi":
-                showDelhi();
-                break;
-            case "Hyderabad":
-                showHyderabad();
-                break;
-        }
-    }
+    openPlace
 );
-
 /*-------------------------------Call for Nature------------------------------------------------*/
 loadCategory(
     "Nature",
     "nature-container",
     "nature-card",
-    function(place){
-        switch(place.name){
-            case "Dudhsagar Falls":
-                showDudhSagar();
-                break;
-            case "Valley of Flowers":
-                showValleyofFlowers();
-                break;
-            case "Rann of Kutch":
-                showRannofKutch();
-                break;
-        }
-    }
+    openPlace
 );
+
+
+/*---------------------------------------Load All Destinations-------------------------------------*/
+async function loadAllDestinations(){
+    const response = await fetch("http://localhost:5000/api/destinations");
+    allDestinations = await response.json();
+}
+loadAllDestinations();
+
+/*-------------------------------------Search Input--------------------------------------*/
+const searchInput = document.getElementById("searchInput");
+searchInput.addEventListener("keyup", function () {
+    const value = this.value.toLowerCase().trim();
+    const results = allDestinations.filter(place =>
+        place.name.toLowerCase().includes(value)
+    );
+    if (value === "") {
+        document.getElementById("search-section").style.display = "none";
+        return;
+    }
+    document.getElementById("search-section").style.display = "block";
+    displayPlaces(
+        results,
+        "search-container",
+        "nature-card",
+        openPlace
+    );
+});
