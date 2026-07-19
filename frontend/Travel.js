@@ -590,3 +590,31 @@ searchInput.addEventListener("keyup", function () {
         openPlace
     );
 });
+/*---------------------------------Contact Section--------------------------------------------------*/
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+    contactForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const contactData = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value
+        };
+        try {
+            const response = await fetch("http://localhost:5000/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(contactData)
+            });
+            const result = await response.json();
+            alert(result.message);
+            contactForm.reset();
+        } catch (error) {
+            console.log(error);
+            alert("Something went wrong!");
+        }
+    });
+}
