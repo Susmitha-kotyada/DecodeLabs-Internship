@@ -38,19 +38,33 @@
 		</section>
 
 <!--------------------------------------Search Section-------------------------------------------->
-		<div class="search-box">
+<div class="search-filter">
+
     <input
         type="text"
         id="searchInput"
-        placeholder="🔍 Search places..."
-    >
+        placeholder="🔍 Search places...">
+    <select id="stateFilter">
+        <option value="All">All States</option>
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+        <option value="Tamil Nadu">Tamil Nadu</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Telangana">Telangana</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Goa">Goa</option>
+        <option value="Odisha">Odisha</option>
+        <option value="West Bengal">West Bengal</option>
+        <option value="Uttarakhand">Uttarakhand</option>
+        <option value="Uttar Pradesh">Uttar Pradesh</option>
+        <option value="Karnataka">Karnataka</option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+        <option value="Gujarat">Gujarat</option>
+    </select>
 </div>
-
 <section id="search-section" style="display:none;">
     <h1>Search Results</h1>
-
     <div id="search-container" class="cards-container"></div>
-
     <button class="back" onclick="backtoCategories()">
         Back to Categories
     </button>

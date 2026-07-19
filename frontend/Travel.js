@@ -571,25 +571,57 @@ async function loadAllDestinations(){
 }
 loadAllDestinations();
 
-/*-------------------------------------Search Input--------------------------------------*/
-const searchInput = document.getElementById("searchInput");
-searchInput.addEventListener("keyup", function () {
-    const value = this.value.toLowerCase().trim();
-    const results = allDestinations.filter(place =>
-        place.name.toLowerCase().includes(value)
-    );
-    if (value === "") {
-        document.getElementById("search-section").style.display = "none";
+
+function filterDestinations() {
+
+    const searchText = document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const selectedState = document.getElementById("stateFilter").value;
+
+    let filtered = allDestinations.filter(place => {
+
+        const matchesSearch =
+            place.name.toLowerCase().includes(searchText);
+
+        const matchesState =
+            selectedState === "All" ||
+            place.location.trim().toLowerCase() === selectedState.trim().toLowerCase();
+
+        return matchesSearch && matchesState;
+
+    });
+
+    const searchSection = document.getElementById("search-section");
+
+    if (searchText === "" && selectedState === "All") {
+
+        searchSection.style.display = "none";
         return;
+
     }
-    document.getElementById("search-section").style.display = "block";
+
+    searchSection.style.display = "block";
+
     displayPlaces(
-        results,
+        filtered,
         "search-container",
         "nature-card",
         openPlace
     );
-});
+
+}
+/*-------------------------------------Search Input--------------------------------------*/
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", filterDestinations);
+
+const stateFilter = document.getElementById("stateFilter");
+
+stateFilter.addEventListener("change", filterDestinations);
 /*---------------------------------Contact Section--------------------------------------------------*/
 const contactForm = document.getElementById("contactForm");
 if (contactForm) {
