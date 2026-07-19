@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Messages</title>
+    <link rel="stylesheet" href="message.css">
+</head>
+<body>
+    <div class="dashboard-header">
+    <h1>Explore Bharat Admin Dashboard</h1>
+    <p>Manage Contact Messages</p>
+</div>
+<div class="stats">
+    <div class="stat-card">
+        <h2 id="totalMessages">0</h2>
+        <p>Total Messages</p>
+    </div>
+</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Subject</th>
+                <th>Message</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="messageTable">
+        </tbody>
+    </table>
+    <script src="messages.js"></script>
+</body>
+</html>

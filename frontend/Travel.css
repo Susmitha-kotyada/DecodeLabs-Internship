@@ -770,6 +770,30 @@ nav ul{
     margin-top: 80px;
     flex-wrap:wrap;
 }
+
+.search-wrapper,
+.filter-wrapper{
+
+    background:white;
+    border-radius:50px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.12);
+    padding:5px 12px;
+    transition:0.3s;
+
+}
+
+.search-wrapper:hover,
+.filter-wrapper:hover{
+
+    transform:translateY(-2px);
+}
+.search-wrapper i,
+.filter-wrapper i{
+
+    color:#2E8B57;
+    font-size:18px;
+
+}
 #searchInput{
     width:320px;
     padding:12px;

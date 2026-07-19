@@ -39,11 +39,14 @@
 
 <!--------------------------------------Search Section-------------------------------------------->
 <div class="search-filter">
-
+<div class="search-wrapper">
+	<i class="fa-solid fa-magnifying-glass"></i>
     <input
         type="text"
         id="searchInput"
-        placeholder="🔍 Search places...">
+        placeholder="Search places..."></div>
+    <div class="filter-wrapper">
+    	<i class="fa-solid fa-location-dot"></i>
     <select id="stateFilter">
         <option value="All">All States</option>
         <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -60,7 +63,7 @@
         <option value="Maharashtra">Maharashtra</option>
         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
         <option value="Gujarat">Gujarat</option>
-    </select>
+    </select></div>
 </div>
 <section id="search-section" style="display:none;">
     <h1>Search Results</h1>

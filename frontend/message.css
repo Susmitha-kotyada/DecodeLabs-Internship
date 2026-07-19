@@ -1,0 +1,86 @@
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:#f4f4f4;
+
+    padding:40px;
+
+}
+
+.dashboard-header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.dashboard-header h1{
+
+    color:#2E8B57;
+
+}
+
+.dashboard-header p{
+
+    color:#555;
+
+}
+
+.stats{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:30px;
+
+}
+
+.stat-card{
+
+    background:#2E8B57;
+
+    color:white;
+
+    padding:20px 40px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    min-width:180px;
+
+}
+
+.stat-card h2{
+
+    margin:0;
+
+    font-size:35px;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+}
+th{
+    background:#2E8B57;
+    color:white;
+    padding:15px;
+}
+td{
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+tr:hover{
+    background:#f9f9f9;
+}
