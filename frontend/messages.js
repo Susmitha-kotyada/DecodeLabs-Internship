@@ -1,3 +1,8 @@
+const token = localStorage.getItem("adminToken");
+if (!token) {
+    window.location.href = "admin-login.html";
+}
+
 async function loadMessages(){
     try{
         const response=await fetch("http://localhost:5000/api/contact");
@@ -33,3 +38,11 @@ async function deleteMessage(id){
     });
     loadMessages();
 }
+
+const logoutBtn = document.getElementById("logoutBtn");
+logoutBtn.addEventListener("click", function(){
+    localStorage.removeItem("adminToken");
+    localStorage.removeItem("adminUsername");
+    alert("Logged out successfully!");
+    window.location.href = "admin-login.html";
+});

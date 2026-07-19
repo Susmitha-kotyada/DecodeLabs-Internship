@@ -28,6 +28,32 @@ body{
 
 }
 
+#logoutBtn{
+
+    background:#dc3545;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 20px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    margin-top:15px;
+
+    font-size:15px;
+
+}
+
+#logoutBtn:hover{
+
+    background:#c82333;
+
+}
+
 .stats{
 
     display:flex;
