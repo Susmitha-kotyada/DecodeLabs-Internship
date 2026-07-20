@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Destination = require("../models/Destination");
 
+
 // GET all destinations
 router.get("/", async (req, res) => {
   try {
@@ -24,7 +25,7 @@ router.post("/", async (req, res) => {
 });
 
 
-// GET destinations by category
+// GET destinations by category-----------------------------------------------------------------------
 router.get("/category/:category", async (req, res) => {
     try {
         const destinations = await Destination.find({
@@ -39,7 +40,7 @@ router.get("/category/:category", async (req, res) => {
     }
 });
 
-// GET one destination by ID
+// GET one destination by ID-------------------------------------------------------
 router.get("/:id", async (req, res) => {
     try {
         const destination = await Destination.findById(req.params.id);
@@ -52,6 +53,50 @@ router.get("/:id", async (req, res) => {
 
         res.json(destination);
 
+    } catch (error) {
+        res.status(500).json({
+            message: error.message
+        });
+    }
+});
+
+
+// UPDATE destination-----------------------------------------------------
+router.put("/:id", async (req, res) => {
+    try {
+        const destination = await Destination.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            {
+                new: true,
+                runValidators: true
+            }
+        );
+        if (!destination) {
+            return res.status(404).json({
+                message: "Destination not found"
+            });
+        }
+        res.json(destination);
+    } catch (error) {
+        res.status(400).json({
+            message: error.message
+        });
+    }
+});
+
+// DELETE destination----------------------------------------------------------
+router.delete("/:id", async (req, res) => {
+    try {
+        const destination = await Destination.findByIdAndDelete(req.params.id);
+        if (!destination) {
+            return res.status(404).json({
+                message: "Destination not found"
+            });
+        }
+        res.json({
+            message: "Destination deleted successfully"
+        });
     } catch (error) {
         res.status(500).json({
             message: error.message

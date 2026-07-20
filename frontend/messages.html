@@ -3,35 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Messages</title>
+    <title>Explore Bharat Admin</title>
+
     <link rel="stylesheet" href="message.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
-    <div class="dashboard-header">
-    <h1>Explore Bharat Admin Dashboard</h1>
-    <p>Manage Contact Messages</p>
-    <button id="logoutBtn">Logout</button>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Explore Bharat</h2>
+
+        <ul>
+            <li class="active">
+                <i class="fa-solid fa-envelope"></i>
+                Messages
+            </li>
+
+            <li onclick="window.location.href='admin-destinations.html'" class="active">
+                <i class="fa-solid fa-location-dot"></i>
+                Destinations
+            </li>
+
+            <li>
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <!-- Topbar -->
+        <div class="topbar">
+
+            <div>
+                <h1>Admin Dashboard</h1>
+                <p>Manage contact messages</p>
+            </div>
+
+            <button id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+
+        </div>
+
+        <!-- Statistics -->
+        <div class="cards">
+
+            <div class="card">
+                <h3>Total Messages</h3>
+                <h1 id="totalMessages">0</h1>
+            </div>
+
+        </div>
+
+        <!-- Search -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="search"
+                placeholder="Search by name, email or subject">
+        </div>
+
+        <!-- Messages -->
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody id="messageTable">
+                </tbody>
+            </table>
+        </div>
+    </main>
 </div>
-<div class="stats">
-    <div class="stat-card">
-        <h2 id="totalMessages">0</h2>
-        <p>Total Messages</p>
-    </div>
-</div>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Subject</th>
-                <th>Message</th>
-                <th>Date</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody id="messageTable">
-        </tbody>
-    </table>
-    <script src="messages.js"></script>
+
+<script src="messages.js"></script>
+
 </body>
 </html>
